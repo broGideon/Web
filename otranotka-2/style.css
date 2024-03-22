@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    width: 15%;
+    height: 200px;
+    background: gray;
+    flex-wrap: wrap;
+}
+
+.children{
+    width: 40%;
+    background-color: orange;
+    height: 40%;
+    margin: 10px;
+}
+.container-new{
+    display: grid;
+    background: blue;
+    grid-template-columns: 100px 90px 100px;
+    grid-template-rows: 110px 95px;
+    width: 330px;
+    height: 220px;
+    column-gap: 10px;
+    row-gap: 10px;
+    padding: 20px;
+}
+
+.children1{
+    background: aqua;
+    grid-column: span 2;
+}
+.children2{
+    background: yellow;
+}
+.children5{
+    background: aqua;
+}
+.children3{
+    background: red;
+}
+.children4{
+    background: red;
+}
+.spisok * {
+    font-size: 24px;
+    font-weight: 700;
+}
+.spisok {
+    width: 650px;
+}
