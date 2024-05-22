@@ -15,7 +15,6 @@
 .overlap-container{
     display: flex;
     flex-wrap: nowrap !important;
-    margin-left: -3%!important;
 }
 
 main{
