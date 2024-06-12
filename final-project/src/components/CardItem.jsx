@@ -3,7 +3,7 @@ import "./card-item.css";
 
 import Item from "./Item";
 
-function CardItem(props) {
+const CardItem = (props) => {
     return (
         <div className="card-item">
             {

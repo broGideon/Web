@@ -12,7 +12,7 @@ const Item = (props) => {
                 <Card.Text>
                     {props.description}
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Button variant="primary">Добавить в корзину</Button>
             </Card.Body>
         </Card>
     );
