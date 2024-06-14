@@ -5,6 +5,9 @@ import React, { useState, useEffect } from 'react';
 import {Route, Routes} from "react-router-dom";
 import axios from "axios";
 import CardItem from "./components/CardItem.jsx";
+import Overlay from "./components/Overlay.jsx";
+
+export const AppContext = React.createContext({});
 
 const App = () => {
     const [card, setCard] = useState([]);
@@ -23,15 +26,44 @@ const App = () => {
         axiosData();
     }, []);
 
+    const isAdded = (myId) => {
+        return overlayItems.some((objIsAdded) => objIsAdded.myId === myId);
+    }
+
+    const deleteItem = (id) => {
+        axios.delete(`http://localhost:3001/overlays/${id}`);
+        setOverlayItems((over)=> overlayItems.filter(item => Number(item) !== Number(id)));
+    }
+
+
     return (
-        <div>
-            <Header/>
-            <Routes>
-                <Route path={'/cart'} element={<CardItem item={card}/>}/>
-                <Route path={'/overlay'} element={<CardItem overlayItems={overlayItems}/>}/>
-                <Route path={'/home'} element={<Home/>}/>
-            </Routes>
-        </div>
+        <AppContext.Provider
+            value={{
+                card,
+                setCard,
+                overlayItems,
+                setOverlayItems,
+                isAdded
+            }}>
+            <div>
+                <Header/>
+                <Routes>
+                    <Route path={'/cart'} element={
+                        <CardItem
+                            item={card}
+                            overlayItems={overlayItems}
+                            setOverlayItems={setOverlayItems}
+                        />}/>
+                    <Route path={'/overlay'} element={
+                        <Overlay
+                            overlayItems={overlayItems}
+                            deleteItem={deleteItem}
+
+                        />}/>
+                    <Route path={'/'} element={<Home/>}/>
+                </Routes>
+            </div>
+        </AppContext.Provider>
     );
 }
 
