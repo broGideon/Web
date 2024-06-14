@@ -3,14 +3,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { AppContext} from "../App";
+import {AiFillHeart, AiOutlineHeart} from "react-icons/ai";
 
 const Item = (props) => {
     const context = React.useContext(AppContext);
 
     const onClickAdd = () => {
         // eslint-disable-next-line react/prop-types
-        const {id, myId, name:name, description:description, price:price} = props;
+        const {id, myId, name: name, description: description, price: price} = props;
         props.onPlus({id, myId, name, description, price});
+    }
+
+    const onClickAddToFavorite = () => {
+        // eslint-disable-next-line react/prop-types
+        const {id, myId, name:name, description:description, price:price} = props;
+        props.onPlusFavorite({id, myId, name, description, price});
     }
     return (
         <Card style={{ width: '28rem' }}>
@@ -20,14 +27,19 @@ const Item = (props) => {
                 <Card.Text>
                     {props.description}
                 </Card.Text>
-                {/*<Card.Text>
+                <Card.Text>
                     {props.price}
-                </Card.Text>*/}
+                </Card.Text>
                 <Button onClick={onClickAdd}>
                     {
-                        context.isAdded(props.myID) ? 'Добавлен':'Добавить'
+                        context.isAdded(props.myId) ? 'Добавлен':'Добавить'
                     }
                 </Button>
+                {<Button onClick={onClickAddToFavorite} className="mr-2">
+                    {
+                        context.isAddedToFavorite(props.myId) ? <AiFillHeart color="red" /> : <AiOutlineHeart color="gray" />
+                    }
+                </Button>}
             </Card.Body>
         </Card>
     );

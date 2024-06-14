@@ -20,6 +20,21 @@ const CardItem = (props) => {
         }
     }
 
+    const onAddFavorite = (obj) => {
+        try{
+            if(props.favorite.find(item => Number(item.id) === Number(obj.id))){
+                axios.delete(`http://localhost:3001/favorite/${obj.id}`);
+                props.setFavorite((over) => over.filter(item => Number(item.id) !== Number(obj.id)));
+            } else {
+                axios.post(`http://localhost:3001/favorite`, obj);
+                props.setFavorite([...props.favorite, obj]);
+            }
+        }
+        catch{
+            alert("Error");
+        }
+    }
+
     return (
         <div className="card-item">
             {
@@ -27,12 +42,13 @@ const CardItem = (props) => {
                 return (
                     <Item key={obj.id}
                           id={obj.id}
-                          myId={{obj.myId}}
+                          myId={obj.myId}
                           name={obj.name}
                           description={obj.description}
                           price={obj.price}
 
                           onPlus={(cartObj) => onAddOverlay(cartObj)}
+                          onPlusFavorite={(cartObj) => onAddFavorite(cartObj)}
                     />
                     );
                 })
