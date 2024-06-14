@@ -8,6 +8,7 @@ const Item = (props) => {
     const context = React.useContext(AppContext);
 
     const onClickAdd = () => {
+        // eslint-disable-next-line react/prop-types
         const {id, myId, name:name, description:description, price:price} = props;
         props.onPlus({id, myId, name, description, price});
     }
@@ -24,7 +25,7 @@ const Item = (props) => {
                 </Card.Text>*/}
                 <Button onClick={onClickAdd}>
                     {
-                        context.isAdded(props) ? 'Добавлен':'Добавлен'
+                        context.isAdded(props.myID) ? 'Добавлен':'Добавить'
                     }
                 </Button>
             </Card.Body>

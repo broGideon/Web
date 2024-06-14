@@ -20,7 +20,7 @@ const App = () => {
             const overlayData = await axios.get('http://localhost:3001/overlays');
 
             setCard(cardData.data);
-            setOverlayItems(cardData.data);
+            setOverlayItems(overlayData.data);
         }
 
         axiosData();
@@ -32,8 +32,10 @@ const App = () => {
 
     const deleteItem = (id) => {
         axios.delete(`http://localhost:3001/overlays/${id}`);
-        setOverlayItems((over)=> overlayItems.filter(item => Number(item) !== Number(id)));
+        setOverlayItems(()=> overlayItems.filter(item => Number(item.id) !== Number(id)));
     }
+
+    const totalPrice = overlayItems.reduce((total, obj) => total + parseFloat(obj.price), 0);
 
 
     return (
@@ -43,7 +45,8 @@ const App = () => {
                 setCard,
                 overlayItems,
                 setOverlayItems,
-                isAdded
+                isAdded,
+                deleteItem
             }}>
             <div>
                 <Header/>
@@ -58,7 +61,7 @@ const App = () => {
                         <Overlay
                             overlayItems={overlayItems}
                             deleteItem={deleteItem}
-
+                            totalPrice={totalPrice}
                         />}/>
                     <Route path={'/'} element={<Home/>}/>
                 </Routes>

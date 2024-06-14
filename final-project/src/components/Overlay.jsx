@@ -31,6 +31,11 @@ const Overlay = (props) => {
                 ) : (
                     <h1>Пусто</h1>
             )}
+
+            <div>
+                <p>Итог: </p>
+                <p>{props.totalPrice}</p>
+            </div>
         </div>
     );
 }
