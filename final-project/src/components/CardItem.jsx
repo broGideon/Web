@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import "./card-item.css";
 
@@ -35,21 +36,32 @@ const CardItem = (props) => {
         }
     }
 
-    return (
-        <div className="card-item">
-            {
-                props.item.map(obj => {
-                return (
-                    <Item key={obj.id}
-                          id={obj.id}
-                          myId={obj.myId}
-                          name={obj.name}
-                          description={obj.description}
-                          price={obj.price}
+    const onSearch = (inputValue) => {
+        props.setSearch(inputValue.target.value);
+    }
 
-                          onPlus={(cartObj) => onAddOverlay(cartObj)}
-                          onPlusFavorite={(cartObj) => onAddFavorite(cartObj)}
-                    />
+    return (
+        <div>
+            <div>
+                <input onChange={onSearch} placeholder="Поиск"/>
+            </div>
+            {
+                props.item
+                    .filter(
+                        item => item.name.toLowerCase().includes(props.search.toLowerCase())
+                    )
+                    .map(obj => {
+                    return (
+                        <Item key={obj.id}
+                              id={obj.id}
+                              myId={obj.myId}
+                              name={obj.name}
+                              description={obj.description}
+                              price={obj.price}
+
+                              onPlus={(cartObj) => onAddOverlay(cartObj)}
+                              onPlusFavorite={(cartObj) => onAddFavorite(cartObj)}
+                        />
                     );
                 })
             }

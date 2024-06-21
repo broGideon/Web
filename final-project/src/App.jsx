@@ -13,7 +13,7 @@ export const AppContext = React.createContext({});
 const App = () => {
     const [card, setCard] = useState([]);
     const [overlayItems, setOverlayItems] = useState([]);
-    const [search, setSearch] = useState([]);
+    const [search, setSearch] = useState("");
     const [favorite, setFavorite] = useState([]);
 
     useEffect(() => {
@@ -58,6 +58,8 @@ const App = () => {
                 setCard,
                 overlayItems,
                 setOverlayItems,
+                search,
+                setSearch,
                 isAdded,
                 deleteItem,
                 isAddedToFavorite,
@@ -73,6 +75,8 @@ const App = () => {
                             setOverlayItems={setOverlayItems}
                             favorite={favorite}
                             setFavorite={setFavorite}
+                            search={search}
+                            setSearch={setSearch}
                         />}/>
                     <Route path={'/overlay'} element={
                         <Overlay
