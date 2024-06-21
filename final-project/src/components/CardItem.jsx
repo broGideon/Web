@@ -1,11 +1,14 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, {useState} from "react";
 import "./card-item.css";
 
 import Item from "./Item";
 import axios from "axios";
 
 const CardItem = (props) => {
+
+    const [selectedCategory, setSelectedCategory] = useState('all');
+
     const onAddOverlay = (obj) => {
         try{
             if(props.overlayItems.find(item => Number(item.id) === Number(obj.id))){
@@ -40,30 +43,42 @@ const CardItem = (props) => {
         props.setSearch(inputValue.target.value);
     }
 
+    const filteredItems = props.item.filter(item => selectedCategory === 'all' || item.category === selectedCategory );
+
+    const handleCategoryChange = (event) => { setSelectedCategory(event.target.value); };
+
     return (
         <div>
             <div>
                 <input onChange={onSearch} placeholder="Поиск"/>
             </div>
+            <div>
+                <select onChange={handleCategoryChange}>
+                    <option value="all">Все</option>
+                    <option value="fruit">Фрукты</option>
+                    <option value="notFruit">Не фрукты</option>
+                    <option value="category3">Категория 3</option>
+                </select>
+            </div>
             {
-                props.item
+                filteredItems
                     .filter(
                         item => item.name.toLowerCase().includes(props.search.toLowerCase())
                     )
                     .map(obj => {
-                    return (
-                        <Item key={obj.id}
-                              id={obj.id}
-                              myId={obj.myId}
-                              name={obj.name}
-                              description={obj.description}
-                              price={obj.price}
+                        return (
+                            <Item key={obj.id}
+                                  id={obj.id}
+                                  myId={obj.myId}
+                                  name={obj.name}
+                                  description={obj.description}
+                                  price={obj.price}
 
-                              onPlus={(cartObj) => onAddOverlay(cartObj)}
-                              onPlusFavorite={(cartObj) => onAddFavorite(cartObj)}
-                        />
-                    );
-                })
+                                  onPlus={(cartObj) => onAddOverlay(cartObj)}
+                                  onPlusFavorite={(cartObj) => onAddFavorite(cartObj)}
+                            />
+                        );
+                    })
             }
         </div>
     );

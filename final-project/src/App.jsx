@@ -15,6 +15,7 @@ const App = () => {
     const [overlayItems, setOverlayItems] = useState([]);
     const [search, setSearch] = useState("");
     const [favorite, setFavorite] = useState([]);
+    const [selectedCategory, setSelectedCategory] = useState('all');
 
     useEffect(() => {
         async function axiosData() {
