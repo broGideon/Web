@@ -30,11 +30,16 @@ const Item = (props) => {
                 <Card.Text>
                     {props.price}
                 </Card.Text>
-                <Button onClick={onClickAdd}>
-                    {
-                        context.isAdded(props.myId) ? 'Добавлен':'Добавить'
-                    }
-                </Button>
+                {
+                    context.isAdded(props.myId) ? (
+                        <Button variant="danger" onClick={onClickAdd}>
+                            Удалить
+                        </Button>):(
+                        <Button onClick={onClickAdd}>
+                            Добавить
+                        </Button>
+                    )
+                }
                 {<Button onClick={onClickAddToFavorite} className="mr-2">
                     {
                         context.isAddedToFavorite(props.myId) ? <AiFillHeart color="red" /> : <AiOutlineHeart color="gray" />

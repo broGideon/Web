@@ -21,7 +21,7 @@ const Overlay = (props) => {
                                 <Card.Text>
                                     {obj.price}
                                 </Card.Text>
-                                <Button onClick={() => props.deleteItem(obj.id)}>
+                                <Button variant="danger" onClick={() => props.deleteItem(obj.id)}>
                                     X
                                 </Button>
                             </Card.Body>
