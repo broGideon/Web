@@ -1,31 +1,29 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import {AppContext} from "../App.jsx";
+import Item from "./Item.jsx";
 
 const Overlay = (props) => {
+
+    const context = useContext(AppContext);
+
     return(
         <div>
             <div><h1>Корзина</h1></div>
 
-            {props.overlayItems.length > 0 ? (
+            {context.overlayItems.length > 0 ? (
                 <div>
-                    {props.overlayItems.map((obj) => (
-                        <Card style={{ width: '28rem' }}>
-                            {/*<Card.Img className='rounded' variant="top" src="holder.js/100px180" />*/}
-                            <Card.Body>
-                                <Card.Title>{obj.name}</Card.Title>
-                                <Card.Text>
-                                    {obj.description}
-                                </Card.Text>
-                                <Card.Text>
-                                    {obj.price}
-                                </Card.Text>
-                                <Button variant="danger" onClick={() => props.deleteItem(obj.id)}>
-                                    X
-                                </Button>
-                            </Card.Body>
-                        </Card>
+                    {context.overlayItems.map((obj) => (
+                        <Item
+                            key={obj.id}
+                            id={obj.id}
+                            myId={obj.myId}
+                            name={obj.name}
+                            description={obj.description}
+                            price={obj.price}
+                            item={obj}
+                            onPlus={(cartObj) => context.onAddOverlay(cartObj)}
+                            onPlusFavorite={(cartObj) => context.onAddFavorite(cartObj)}/>
                     ))}
                 </div>
                 ) : (
@@ -34,7 +32,7 @@ const Overlay = (props) => {
 
             <div>
                 <p>Итог: </p>
-                <p>{props.totalPrice}</p>
+                <p>{context.totalPrice}</p>
             </div>
         </div>
     );

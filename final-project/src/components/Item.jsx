@@ -4,20 +4,31 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { AppContext} from "../App";
 import {AiFillHeart, AiOutlineHeart} from "react-icons/ai";
+import {useLocation, useNavigate} from "react-router-dom";
 
 const Item = (props) => {
     const context = React.useContext(AppContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    console.log(location.pathname);
 
     const onClickAdd = () => {
-        // eslint-disable-next-line react/prop-types
         const {id, myId, name: name, description: description, price: price} = props;
         props.onPlus({id, myId, name, description, price});
     }
 
     const onClickAddToFavorite = () => {
-        // eslint-disable-next-line react/prop-types
         const {id, myId, name:name, description:description, price:price} = props;
         props.onPlusFavorite({id, myId, name, description, price});
+    }
+
+    const onRedirectAbout = () => {
+        context.setAbout(props.item);
+        console.log("О товаре");
+        return (
+            navigate('/about')
+        )
     }
     return (
         <Card style={{ width: '28rem' }}>
@@ -40,11 +51,16 @@ const Item = (props) => {
                         </Button>
                     )
                 }
-                {<Button onClick={onClickAddToFavorite} className="mr-2">
+                <Button onClick={onClickAddToFavorite} className="mr-2">
                     {
                         context.isAddedToFavorite(props.myId) ? <AiFillHeart color="red" /> : <AiOutlineHeart color="gray" />
                     }
-                </Button>}
+                </Button>
+                {
+                    location.pathname !== '/about' ? (
+                        <Button variant="link" onClick={onRedirectAbout}>О товаре</Button>
+                    ) : <></>
+                }
             </Card.Body>
         </Card>
     );
