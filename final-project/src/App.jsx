@@ -10,6 +10,7 @@ import Overlay from "./components/Overlay.jsx";
 import Favorite from "./components/Favorite.jsx";
 import About from "./components/About.jsx";
 import Footer from "./components/Footer.jsx";
+import FeedbackForm from "./components/FeedbackForm.jsx";
 
 export const AppContext = React.createContext({});
 
@@ -104,6 +105,7 @@ const App = () => {
                         <Route path={'/about'} element={<About/>} />
                     </Routes>
                 </div>
+                <FeedbackForm/>
                 <Footer/>
         </AppContext.Provider>
     );

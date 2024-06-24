@@ -10,9 +10,9 @@ const Home = () => {
     console.log(items);
     return(
         <motion.div
-            initial={{opacity: 0, y: 70}}
+            initial={{opacity: 0, y: 50}}
             animate={{opacity: 1, y: 0}}
-            transition={{duration: 0.7}}>
+            transition={{duration: 0.5}}>
             <div className="container">
                 <h1 className="my-3">Коротко о нас</h1>
                 <h4>Небольшой магазин диванов</h4>

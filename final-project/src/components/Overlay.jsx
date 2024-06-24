@@ -10,9 +10,9 @@ const Overlay = () => {
 
     return(
         <motion.div
-            initial={{opacity: 0, y: 70}}
+            initial={{opacity: 0, y: 50}}
             animate={{opacity: 1, y: 0}}
-            transition={{duration: 0.7}}>
+            transition={{duration: 0.5}}>
             <div className="container">
                 <div className="row mt-3">
                     <div className="col-md-9"><h1>Корзина</h1></div>

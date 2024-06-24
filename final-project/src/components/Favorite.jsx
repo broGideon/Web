@@ -1,5 +1,4 @@
 import React, {useContext} from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {AppContext} from "../App.jsx";
 import Item from "./Item.jsx";
 import {motion} from 'framer-motion';
@@ -10,9 +9,9 @@ const Favorite = () => {
 
     return(
         <motion.div
-            initial={{opacity: 0, y: 70}}
+            initial={{opacity: 0, y: 50}}
             animate={{opacity: 1, y: 0}}
-            transition={{duration: 0.7}}>
+            transition={{duration: 0.5}}>
             <div className="container">
             <div className="my-3"><h1>Избраное</h1></div>
 

@@ -22,16 +22,16 @@ const About = () => {
     return (
         <Container className="my-2">
             <motion.div
-                initial={{ opacity: 0, y: 70 }}
+                initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
-            >
+                transition={{ duration: 0.5 }}>
+
                 <h1 className="mb-4">О товаре</h1>
                 <Card className="shadow-sm">
                     <Card.Img className="rounded" variant="top" src={obj.url} />
                     <Card.Body>
-                        <Card.Title>{obj.name}</Card.Title>
-                        <Card.Text>{obj.description}</Card.Text>
+                        <Card.Text className="h3">{obj.name}</Card.Text>
+                        <Card.Text className="h5">{obj.description}</Card.Text>
                         <Card.Text className="h4">{obj.price} руб.</Card.Text>
                         {
                             context.isAdded(obj.myId) ? (

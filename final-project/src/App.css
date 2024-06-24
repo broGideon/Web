@@ -40,3 +40,24 @@ footer {
     border-radius: 5px;
     font-size: 16px;
 }
+
+* {
+    transition: all 0.3s;
+}
+
+.popup {
+    z-index: 2;
+    position: fixed;
+    bottom: 230px;
+    top: 0;
+    left: 0;
+    right: 5%;
+    display: flex;
+    justify-content: right;
+    align-items: end;
+    pointer-events: none;
+}
+
+.popup-content {
+    pointer-events: auto;
+}
