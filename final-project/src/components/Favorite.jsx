@@ -13,26 +13,29 @@ const Favorite = () => {
             initial={{opacity: 0, y: 70}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 0.7}}>
-            <div><h1>Избраное</h1></div>
+            <div className="container">
+            <div className="my-3"><h1>Избраное</h1></div>
 
             {context.favorite.length > 0 ? (
-                <div>
+                <div className="row">
                     {context.favorite.map((obj) => (
                         <Item
                             key={obj.id}
                             id={obj.id}
                             myId={obj.myId}
                             name={obj.name}
-                            description={obj.description}
                             price={obj.price}
+                            description={obj.description}
+                            url={obj.url}
                             item={obj}
-                            onPlus={(cartObj) => context.onAddOverlay(cartObj)}
-                            onPlusFavorite={(cartObj) => context.onAddFavorite(cartObj)}/>
+                            onPlus={(obj) => context.onAddOverlay(obj)}
+                            onPlusFavorite={(obj) => context.onAddFavorite(obj)}/>
                     ))}
                 </div>
             ) : (
                 <h1>Пусто</h1>
             )}
+            </div>
         </motion.div>
     );
 }

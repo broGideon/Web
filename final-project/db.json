@@ -5,7 +5,7 @@
       "id": "1",
       "name": "Угловой диван",
       "description": "Данный вид дивана хорошо впишется в большую комнату и будет удобен для посиделок с друзьями",
-      "category": "USA",
+      "country": "USA",
       "price": "129999",
       "url": "https://avatars.mds.yandex.net/i?id=ec40c1bff8e884c66737745163da7f71_l-5906863-images-thumbs&n=13"
     },
@@ -14,16 +14,16 @@
       "id": "2",
       "name": "Диван Санса",
       "description": "Небольшой желтый диван, который впишется в любой интерьер",
-      "category": "USA",
+      "country": "USA",
       "price": "55000",
-      "url": "https://avatars.mds.yandex.net/i?id=fc2b62dd69a604fc1e01cbecd4cc4f1c_l-8794956-images-thumbs&n=13"
+      "url": "https://www.ikea.com/at/en/images/products/fridhult-sofa-bed-skiftebo-yellow__1265821_pe927821_s5.jpg?f=xl"
     },
     {
       "myId": "3",
       "id": "3",
       "name": "Диван Еврокнижка",
       "description": "Небольшой красный диван, который впишется в любой интерьер",
-      "category": "Germany",
+      "country": "Germany",
       "price": "155000",
       "url": "https://i.pinimg.com/originals/58/ed/81/58ed81bfa05189bc19939614fe252ed7.png"
     },
@@ -32,25 +32,25 @@
       "id": "4",
       "name": "Диван Кожанный",
       "description": "Диван из натуральной черной кожи, выглядит роскошно",
-      "category": "Germany",
+      "country": "Germany",
       "price": "230000",
-      "url": "https://avatars.mds.yandex.net/i?id=e22c670ebd4c79001f2af51ae1cab8009c4fb148-11386386-images-thumbs&n=13"
+      "url": "https://bigfoto.name/photo/uploads/posts/2023-03/1680071158_bigfoto-name-p-chernii-ofisnii-divan-26.jpg"
     },
     {
       "myId": "5",
       "id": "5",
       "name": "Диван Танго",
       "description": "Небольшой диван, который прекрасно впишется в гостинную",
-      "category": "Russia",
+      "country": "Russia",
       "price": "25000",
-      "url": "https://avatars.mds.yandex.net/i?id=3e3612ea082e71295db94c34486b9c4488d1e9dd-9152533-images-thumbs&n=13"
+      "url": "https://www.ikea.com/at/en/images/products/paerup-3-seat-sofa-fridtuna-dark-grey-blue__1213939_pe911384_s5.jpg?f=xl"
     },
     {
       "myId": "6",
       "id": "6",
       "name": "Диван выкатной",
       "description": "Оранжевый диван, который прекрасно впишется в гостивую спальню и сможет полноценно заменить кровать",
-      "category": "Russia",
+      "country": "Russia",
       "price": "35000",
       "url": "https://avatars.mds.yandex.net/i?id=ecc5b8c2f21b895041c8e9e9d7794d4243ad7571-12630942-images-thumbs&n=13"
     },
@@ -59,7 +59,7 @@
       "id": "7",
       "name": "Диван Царский",
       "description": "Прекрасный диван, сшитый маленькими ручками китайских работяг, где-то в подвале",
-      "category": "China",
+      "country": "China",
       "price": "44000",
       "url": "https://avatars.mds.yandex.net/i?id=1b8dd45688842cb5b1ccfd7c818fd530_l-5161363-images-thumbs&n=13"
     },
@@ -68,7 +68,7 @@
       "id": "8",
       "name": "Диван Розовый",
       "description": "Небольшой миленький диванчик, хорошо впишется в девичью комнату",
-      "category": "China",
+      "country": "China",
       "price": "15000",
       "url": "https://avatars.mds.yandex.net/i?id=c3e045c4f38799e1dc5199e51e48bedc_l-4079319-images-thumbs&n=13"
     },
@@ -77,7 +77,7 @@
       "id": "9",
       "name": "Кресло Эннилунд",
       "description": "Небольшое кресло, которое идеально впишется в интерьер с диваном",
-      "category": "Turkey",
+      "country": "Turkey",
       "price": "12000",
       "url": "https://avatars.mds.yandex.net/i?id=027a1e80da32341bfbdb1bbec4049421_l-12011805-images-thumbs&n=13"
     },
@@ -86,7 +86,7 @@
       "id": "10",
       "name": "Кресло Бризби",
       "description": "Прекрасное красное кресло, которое вшишется в любой интерьер",
-      "category": "Turkey",
+      "country": "Turkey",
       "price": "14000",
       "url": "https://avatars.mds.yandex.net/i?id=ee99cba9d87feaee9153534d08055930_l-5233025-images-thumbs&n=13"
     },
@@ -95,7 +95,7 @@
       "id": "11",
       "name": "Кресло Кожанное",
       "description": "Прекрасное кресло, сделанное из экокожи",
-      "category": "Turkey",
+      "country": "Turkey",
       "price": "55000",
       "url": "https://pngimg.com/uploads/armchair/armchair_PNG7030.png"
     }
@@ -106,18 +106,130 @@
       "myId": "1",
       "name": "Угловой диван",
       "description": "Данный вид дивана хорошо впишется в большую комнату и будет удобен для посиделок с друзьями",
-      "price": "129999"
-    }
-  ],
-  "favorite": [
+      "price": "129999",
+      "url": "https://avatars.mds.yandex.net/i?id=ec40c1bff8e884c66737745163da7f71_l-5906863-images-thumbs&n=13"
+    },
+    {
+      "id": "4",
+      "myId": "4",
+      "name": "Диван Кожанный",
+      "description": "Диван из натуральной черной кожи, выглядит роскошно",
+      "price": "230000",
+      "url": "https://bigfoto.name/photo/uploads/posts/2023-03/1680071158_bigfoto-name-p-chernii-ofisnii-divan-26.jpg"
+    },
+    {
+      "id": "7",
+      "myId": "7",
+      "name": "Диван Царский",
+      "description": "Прекрасный диван, сшитый маленькими ручками китайских работяг, где-то в подвале",
+      "price": "44000",
+      "url": "https://avatars.mds.yandex.net/i?id=1b8dd45688842cb5b1ccfd7c818fd530_l-5161363-images-thumbs&n=13"
+    },
+    {
+      "id": "10",
+      "myId": "10",
+      "name": "Кресло Бризби",
+      "description": "Прекрасное красное кресло, которое вшишется в любой интерьер",
+      "price": "14000",
+      "url": "https://avatars.mds.yandex.net/i?id=ee99cba9d87feaee9153534d08055930_l-5233025-images-thumbs&n=13"
+    },
+    {
+      "id": "11",
+      "myId": "11",
+      "name": "Кресло Кожанное",
+      "description": "Прекрасное кресло, сделанное из экокожи",
+      "price": "55000",
+      "url": "https://pngimg.com/uploads/armchair/armchair_PNG7030.png"
+    },
+    {
+      "id": "8",
+      "myId": "8",
+      "name": "Диван Розовый",
+      "description": "Небольшой миленький диванчик, хорошо впишется в девичью комнату",
+      "price": "15000",
+      "url": "https://avatars.mds.yandex.net/i?id=c3e045c4f38799e1dc5199e51e48bedc_l-4079319-images-thumbs&n=13"
+    },
+    {
+      "id": "5",
+      "myId": "5",
+      "name": "Диван Танго",
+      "description": "Небольшой диван, который прекрасно впишется в гостинную",
+      "price": "25000",
+      "url": "https://www.ikea.com/at/en/images/products/paerup-3-seat-sofa-fridtuna-dark-grey-blue__1213939_pe911384_s5.jpg?f=xl"
+    },
+    {
+      "id": "3",
+      "myId": "3",
+      "name": "Диван Еврокнижка",
+      "description": "Небольшой красный диван, который впишется в любой интерьер",
+      "price": "155000",
+      "url": "https://i.pinimg.com/originals/58/ed/81/58ed81bfa05189bc19939614fe252ed7.png"
+    },
+    {
+      "id": "6",
+      "myId": "6",
+      "name": "Диван выкатной",
+      "description": "Оранжевый диван, который прекрасно впишется в гостивую спальню и сможет полноценно заменить кровать",
+      "price": "35000",
+      "url": "https://avatars.mds.yandex.net/i?id=ecc5b8c2f21b895041c8e9e9d7794d4243ad7571-12630942-images-thumbs&n=13"
+    },
+    {
+      "id": "9",
+      "myId": "9",
+      "name": "Кресло Эннилунд",
+      "description": "Небольшое кресло, которое идеально впишется в интерьер с диваном",
+      "price": "12000",
+      "url": "https://avatars.mds.yandex.net/i?id=027a1e80da32341bfbdb1bbec4049421_l-12011805-images-thumbs&n=13"
+    },
     {
       "id": "2",
       "myId": "2",
       "name": "Диван Санса",
       "description": "Небольшой желтый диван, который впишется в любой интерьер",
-      "category": "USA",
       "price": "55000",
-      "url": "https://avatars.mds.yandex.net/i?id=fc2b62dd69a604fc1e01cbecd4cc4f1c_l-8794956-images-thumbs&n=13"
+      "url": "https://www.ikea.com/at/en/images/products/fridhult-sofa-bed-skiftebo-yellow__1265821_pe927821_s5.jpg?f=xl"
+    }
+  ],
+  "favorite": [
+    {
+      "id": "1",
+      "myId": "1",
+      "name": "Угловой диван",
+      "description": "Данный вид дивана хорошо впишется в большую комнату и будет удобен для посиделок с друзьями",
+      "price": "129999",
+      "url": "https://avatars.mds.yandex.net/i?id=ec40c1bff8e884c66737745163da7f71_l-5906863-images-thumbs&n=13"
+    },
+    {
+      "id": "10",
+      "myId": "10",
+      "name": "Кресло Бризби",
+      "description": "Прекрасное красное кресло, которое вшишется в любой интерьер",
+      "price": "14000",
+      "url": "https://avatars.mds.yandex.net/i?id=ee99cba9d87feaee9153534d08055930_l-5233025-images-thumbs&n=13"
+    },
+    {
+      "id": "5",
+      "myId": "5",
+      "name": "Диван Танго",
+      "description": "Небольшой диван, который прекрасно впишется в гостинную",
+      "price": "25000",
+      "url": "https://www.ikea.com/at/en/images/products/paerup-3-seat-sofa-fridtuna-dark-grey-blue__1213939_pe911384_s5.jpg?f=xl"
+    },
+    {
+      "id": "6",
+      "myId": "6",
+      "name": "Диван выкатной",
+      "description": "Оранжевый диван, который прекрасно впишется в гостивую спальню и сможет полноценно заменить кровать",
+      "price": "35000",
+      "url": "https://avatars.mds.yandex.net/i?id=ecc5b8c2f21b895041c8e9e9d7794d4243ad7571-12630942-images-thumbs&n=13"
+    },
+    {
+      "id": "2",
+      "myId": "2",
+      "name": "Диван Санса",
+      "description": "Небольшой желтый диван, который впишется в любой интерьер",
+      "price": "55000",
+      "url": "https://www.ikea.com/at/en/images/products/fridhult-sofa-bed-skiftebo-yellow__1265821_pe927821_s5.jpg?f=xl"
     }
   ]
 }

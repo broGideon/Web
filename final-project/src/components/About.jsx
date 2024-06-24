@@ -20,7 +20,7 @@ const About = () => {
     }
 
     return (
-        <Container className="my-5">
+        <Container className="my-2">
             <motion.div
                 initial={{ opacity: 0, y: 70 }}
                 animate={{ opacity: 1, y: 0 }}

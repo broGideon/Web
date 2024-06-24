@@ -1,6 +1,4 @@
-// eslint-disable-next-line no-unused-vars
 import React, {useContext, useState} from "react";
-import "./card-item.css";
 import {AppContext} from "../App.jsx";
 import Item from "./Item";
 import {motion} from "framer-motion";
@@ -15,7 +13,7 @@ const CardItem = () => {
         context.setSearch(inputValue.target.value);
     }
 
-    const filteredItems = context.card.filter(item => selectedCategory === 'all' || item.category === selectedCategory );
+    const filteredItems = context.card.filter(item => selectedCategory === 'all' || item.country === selectedCategory );
 
     const handleCategoryChange = (event) => { setSelectedCategory(event.target.value); };
 
@@ -24,43 +22,48 @@ const CardItem = () => {
             initial={{opacity: 0, y: 70}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 0.7}}>
-            <div className="container">
-
-            <div>
-                <input onChange={onSearch} placeholder="Поиск"/>
-            </div>
-            <div>
-                <select onChange={handleCategoryChange}>
-                    <option value="all">Все</option>
-                    <option value="USA">Америка</option>
-                    <option value="Germany">Германия</option>
-                    <option value="Russia">Россия</option>
-                    <option value="China">Китай</option>
-                    <option value="Turkey">Турция</option>
-                </select>
-            </div>
-            <div className="row">
-            {
-                filteredItems
-                    .filter(item => item.name.toLowerCase().includes(context.search.toLowerCase()))
-                    .map(obj => {
-                        return (
-                            <div className="col-md-4" key={obj.id}>
+            <div className="container mt-3">
+                <h1>Каталог</h1>
+                <div className="row">
+                    <div className="search-container col-md-3">
+                        <input
+                            onChange={onSearch}
+                            placeholder="Поиск"
+                            className="search-input"
+                        />
+                    </div>
+                    <div className="select-container col-md-3">
+                        <select onChange={handleCategoryChange} className="category-select">
+                            <option value="all">Все</option>
+                            <option value="USA">Америка</option>
+                            <option value="Germany">Германия</option>
+                            <option value="Russia">Россия</option>
+                            <option value="China">Китай</option>
+                            <option value="Turkey">Турция</option>
+                        </select>
+                    </div>
+                </div>
+                <div className="row mt-3">
+                    {
+                        filteredItems
+                            .filter(item => item.name.toLowerCase().includes(context.search.toLowerCase()))
+                            .map(obj => {
+                                return (
                                 <Item key={obj.id}
                                       id={obj.id}
                                       myId={obj.myId}
                                       name={obj.name}
                                       price={obj.price}
+                                      description={obj.description}
                                       url={obj.url}
                                       item={obj}
-                                      onPlus={(cartObj) => context.onAddOverlay(cartObj)}
-                                      onPlusFavorite={(cartObj) => context.onAddFavorite(cartObj)}
+                                      onPlus={(obj) => context.onAddOverlay(obj)}
+                                      onPlusFavorite={(obj) => context.onAddFavorite(obj)}
                                 />
-                            </div>
-                        );
-                    })
-            }
-            </div>
+                            );
+                        })
+                }
+                </div>
             </div>
         </motion.div>
     );

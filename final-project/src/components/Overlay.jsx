@@ -13,30 +13,30 @@ const Overlay = () => {
             initial={{opacity: 0, y: 70}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 0.7}}>
-            <div><h1>Корзина</h1></div>
-
-            {context.overlayItems.length > 0 ? (
-                <div>
-                    {context.overlayItems.map((obj) => (
-                        <Item
-                            key={obj.id}
-                            id={obj.id}
-                            myId={obj.myId}
-                            name={obj.name}
-                            description={obj.description}
-                            price={obj.price}
-                            item={obj}
-                            onPlus={(cartObj) => context.onAddOverlay(cartObj)}
-                            onPlusFavorite={(cartObj) => context.onAddFavorite(cartObj)}/>
-                    ))}
+            <div className="container">
+                <div className="row mt-3">
+                    <div className="col-md-9"><h1>Корзина</h1></div>
+                    <div className="col-md-3"><h1>Итого: {context.totalPrice}</h1></div>
                 </div>
-            ) : (
-                <h1>Пусто</h1>
-            )}
-
-            <div>
-                <p>Итог: </p>
-                <p>{context.totalPrice}</p>
+                <div className="row mt-3">
+                    {context.overlayItems.length > 0 ? (
+                        context.overlayItems.map((obj) => (
+                            <Item
+                                key={obj.id}
+                                id={obj.id}
+                                myId={obj.myId}
+                                name={obj.name}
+                                price={obj.price}
+                                description={obj.description}
+                                url={obj.url}
+                                item={obj}
+                                onPlus={(obj) => context.onAddOverlay(obj)}
+                                onPlusFavorite={(obj) => context.onAddFavorite(obj)}/>
+                        ))
+                    ) : (
+                        <h1>Пусто</h1>
+                    )}
+                </div>
             </div>
         </motion.div>
     );
