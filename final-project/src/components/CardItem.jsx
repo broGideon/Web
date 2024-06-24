@@ -49,12 +49,12 @@ const CardItem = () => {
                             .filter(item => item.name.toLowerCase().includes(context.search.toLowerCase()))
                             .map(obj => {
                                 return (
-                                <Item key={obj.id}
-                                      id={obj.id}
-                                      myId={obj.myId}
-                                      name={obj.name}
-                                      price={obj.price}
-                                      description={obj.description}
+                                    <Item key={obj.id}
+                                          id={obj.id}
+                                          myId={obj.myId}
+                                          name={obj.name}
+                                          price={obj.price}
+                                          description={obj.description}
                                       url={obj.url}
                                       item={obj}
                                       onPlus={(obj) => context.onAddOverlay(obj)}
