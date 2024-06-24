@@ -1,5 +1,4 @@
 import React, {useContext, useState} from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { AppContext} from "../App";
@@ -32,14 +31,10 @@ const Item = (props) => {
     }
     return (
         <Card style={{ width: '28rem' }}>
-            {/*<Card.Img className='rounded' variant="top" src="holder.js/100px180" />*/}
             <Card.Body>
                 <Card.Title>{props.name}</Card.Title>
                 <Card.Text>
-                    {props.description}
-                </Card.Text>
-                <Card.Text>
-                    {props.price}
+                    {props.price} руб
                 </Card.Text>
                 {
                     context.isAdded(props.myId) ? (
@@ -51,9 +46,9 @@ const Item = (props) => {
                         </Button>
                     )
                 }
-                <Button onClick={onClickAddToFavorite} className="mr-2">
+                <Button onClick={onClickAddToFavorite} variant="outline-primary" className="mr-2">
                     {
-                        context.isAddedToFavorite(props.myId) ? <AiFillHeart color="red" /> : <AiOutlineHeart color="gray" />
+                        context.isAddedToFavorite(props.myId) ? <AiFillHeart size="1.5em"/> : <AiOutlineHeart size="1.5em"/>
                     }
                 </Button>
                 {

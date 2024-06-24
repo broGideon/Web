@@ -1,4 +1,5 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home';
 import Header from './components/Header';
 import React, { useState, useEffect } from 'react';
@@ -8,6 +9,7 @@ import CardItem from "./components/CardItem.jsx";
 import Overlay from "./components/Overlay.jsx";
 import Favorite from "./components/Favorite.jsx";
 import About from "./components/About.jsx";
+import Footer from "./components/Footer.jsx";
 
 export const AppContext = React.createContext({});
 
@@ -38,16 +40,6 @@ const App = () => {
 
     const isAddedToFavorite = (myId) => {
         return favorite.some((objIsAddedToFavorite) => objIsAddedToFavorite.myId === myId);
-    }
-
-    const deleteItem = (id) => {
-        axios.delete(`http://localhost:3001/overlays/${id}`);
-        setOverlayItems(()=> overlayItems.filter(item => Number(item.id) !== Number(id)));
-    }
-
-    const deleteFavorite = (id) => {
-        axios.delete(`http://localhost:3001/favorite/${id}`);
-        setFavorite(()=> favorite.filter(item => Number(item.id) !== Number(id)));
     }
 
     const onAddFavorite = (obj) => {
@@ -98,22 +90,21 @@ const App = () => {
                 about,
                 setAbout,
                 isAdded,
-                deleteItem,
                 isAddedToFavorite,
-                deleteFavorite,
                 onAddFavorite,
                 onAddOverlay
             }}>
-            <div>
                 <Header/>
-                <Routes>
-                    <Route path={'/cart'} element={ <CardItem/>} />
-                    <Route path={'/overlay'} element={ <Overlay/>} />
-                    <Route path={'/favorite'} element={ <Favorite/>} />
-                    <Route path={'/'} element={<Home/>} />
-                    <Route path={'/about'} element={<About/>} />
-                </Routes>
-            </div>
+                <div className="content">
+                    <Routes>
+                        <Route path={'/cart'} element={ <CardItem/>} />
+                        <Route path={'/overlay'} element={ <Overlay/>} />
+                        <Route path={'/favorite'} element={ <Favorite/>} />
+                        <Route path={'/'} element={<Home/>} />
+                        <Route path={'/about'} element={<About/>} />
+                    </Routes>
+                </div>
+                <Footer/>
         </AppContext.Provider>
     );
 }

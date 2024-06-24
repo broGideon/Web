@@ -2,13 +2,17 @@ import React, {useContext} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {AppContext} from "../App.jsx";
 import Item from "./Item.jsx";
+import {motion} from 'framer-motion';
 
-const Overlay = (props) => {
+const Overlay = () => {
 
     const context = useContext(AppContext);
 
     return(
-        <div>
+        <motion.div
+            initial={{opacity: 0, y: 70}}
+            animate={{opacity: 1, y: 0}}
+            transition={{duration: 0.7}}>
             <div><h1>Корзина</h1></div>
 
             {context.overlayItems.length > 0 ? (
@@ -26,15 +30,15 @@ const Overlay = (props) => {
                             onPlusFavorite={(cartObj) => context.onAddFavorite(cartObj)}/>
                     ))}
                 </div>
-                ) : (
-                    <h1>Пусто</h1>
+            ) : (
+                <h1>Пусто</h1>
             )}
 
             <div>
                 <p>Итог: </p>
                 <p>{context.totalPrice}</p>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

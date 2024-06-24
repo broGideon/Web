@@ -2,13 +2,17 @@ import React, {useContext} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {AppContext} from "../App.jsx";
 import Item from "./Item.jsx";
+import {motion} from 'framer-motion';
 
-const Favorite = (props) => {
+const Favorite = () => {
 
     const context = useContext(AppContext);
 
     return(
-        <div>
+        <motion.div
+            initial={{opacity: 0, y: 70}}
+            animate={{opacity: 1, y: 0}}
+            transition={{duration: 0.7}}>
             <div><h1>Избраное</h1></div>
 
             {context.favorite.length > 0 ? (
@@ -29,7 +33,7 @@ const Favorite = (props) => {
             ) : (
                 <h1>Пусто</h1>
             )}
-        </div>
+        </motion.div>
     );
 }
 
