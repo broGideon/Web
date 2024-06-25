@@ -23,9 +23,9 @@ const App = () => {
 
     useEffect(() => {
         async function axiosData() {
-            const cardData = await axios.get('http://localhost:3001/card');
-            const overlayData = await axios.get('http://localhost:3001/overlays');
-            const favoriteData = await axios.get('http://localhost:3001/favorite');
+            const cardData = await axios.get('http://194.28.225.142:5000/card');
+            const overlayData = await axios.get('http://194.28.225.142:5000/overlays');
+            const favoriteData = await axios.get('http://194.28.225.142:5000/favorite');
 
             setCard(cardData.data);
             setOverlayItems(overlayData.data);
@@ -46,10 +46,10 @@ const App = () => {
     const onAddFavorite = (obj) => {
         try{
             if(favorite.find(item => Number(item.id) === Number(obj.id))){
-                axios.delete(`http://localhost:3001/favorite/${obj.id}`);
+                axios.delete(`http://194.28.225.142:5000/favorite/${obj.id}`);
                 setFavorite((over) => over.filter(item => Number(item.id) !== Number(obj.id)));
             } else {
-                axios.post(`http://localhost:3001/favorite`, obj);
+                axios.post(`http://194.28.225.142:5000/favorite`, obj);
                 setFavorite([...favorite, obj]);
             }
         }
@@ -61,10 +61,10 @@ const App = () => {
     const onAddOverlay = (obj) => {
         try{
             if(overlayItems.find(item => Number(item.id) === Number(obj.id))){
-                axios.delete(`http://localhost:3001/overlays/${obj.id}`);
+                axios.delete(`http://194.28.225.142:5000/overlays/${obj.id}`);
                 setOverlayItems((over) => over.filter(item => Number(item.id) !== Number(obj.id)));
             } else {
-                axios.post(`http://localhost:3001/overlays`, obj);
+                axios.post(`http://194.28.225.142:5000/overlays`, obj);
                 setOverlayItems([...overlayItems, obj]);
             }
         }

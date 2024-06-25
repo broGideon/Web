@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from 'emailjs-com';
 import {OverlayTrigger, Popover, Button, Form} from 'react-bootstrap';
+import {FaPhone} from "react-icons/fa";
 
 const FeedbackForm  = () => {
     const {
@@ -68,7 +69,9 @@ const FeedbackForm  = () => {
             <div className="popup">
                 <div className="popup-content">
                     <OverlayTrigger trigger="click" placement="left" overlay={popover}>
-                        <Button variant="info">Обратная связь</Button>
+                        <Button variant="info">
+                            <FaPhone/>
+                        </Button>
                     </OverlayTrigger>
                 </div>
             </div>
